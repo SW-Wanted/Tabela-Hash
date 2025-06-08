@@ -86,16 +86,12 @@ bool pesquisarChave(HashTable* th, int chave) {
 // Imprime todas as chaves na tabela hash
 void imprimirChaves(HashTable* th) {
     int i;
-    printf("HashTable (%d baldes):\n", th->tamanho);
     for (i = 0; i < th->tamanho; i++) {
-        printf("[%2d]: ", i);
+        printf("%d", i);
         No* atual = th->tabela[i];
         while (atual != NULL) {
-            printf("%d", atual->chave);
-            if (atual->proximo != NULL) {
-                printf(" -> ");
-            }
-            atual = atual->proximo;
+        	printf(" -> %d", atual->chave);
+        	atual = atual->proximo;
         }
         printf(" -> NULL\n");
     }
